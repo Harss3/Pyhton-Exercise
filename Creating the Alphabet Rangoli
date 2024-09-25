@@ -1,0 +1,25 @@
+def print_rangoli(size):
+    alpha = [chr(i) for i in range(97, 123)]
+    alpha_m = ''.join(alpha)    # join the alphabets
+    r = n-1
+    
+    center = alpha_m[r::-1] + alpha_m[1:r+1]
+    jo_cent = '-'.join(center)  # join the center part
+    dash = len(jo_cent) // 2    # create dash with halved length of center part
+    
+    # creating the top of triangle
+    for i in range(r):
+        top = alpha_m[r:r-(i+1):-1] + alpha_m[r+1-i:r+1]
+        print('-'*(dash-2*i) + '-'.join(top) + '-'*(dash-2*i))
+        
+    # creating the center part
+    print(jo_cent)
+    
+    # creating the reverse triangle
+    for i in range(r):
+        bot = alpha_m[r:r-(r-i):-1] + alpha_m[i+2:r+1]
+        print('-'*(2 + (2*i)) + '-'.join(bot) + '-'*(2 + (2*i)))
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
