@@ -2,12 +2,12 @@ def minion_game(string):
   vowel = 'AIUEO' 
   kevin = stuart = 0
   
-  if string.isupper() == True and 0 < len(string) <= 10**6:
+  if string.isupper() == True and 0 < len(string) <= 10**6:     # only uppercase string is allowed and 0 < len(s) < 10**6 for the constrains
       for i in range(len(string)):
           if string[i] not in vowel:
-              stuart += len(string) - i
+              stuart += len(string) - i    # sum of words began with consonants
           else:
-              kevin += len(string) - i
+              kevin += len(string) - i    # sum of words began with vowels
   
   if kevin > stuart:
       print("Kevin", kevin)
